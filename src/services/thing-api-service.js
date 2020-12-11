@@ -33,6 +33,7 @@ const ThingApiService = {
     return fetch(`${config.API_ENDPOINT}/reviews`, {
       method: 'POST',
       headers: {
+        authorization: `basic ${TokenService.getAuthToken()}`,
         'content-type': 'application/json'
       },
       body: JSON.stringify({
